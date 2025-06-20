@@ -4,10 +4,12 @@ const User = require("../models/userModel.js");
 const authMiddleware = async (req, res, next) => {
   try {
     const token = req.cookies.token;
+    console.log("Phantom");
+    console.log(token);
     if (!token) {
       return res.status(401).json({ msg: "Login fisrt" });
     }
-    console.log("Phantom");
+
     const payload = jwt.verify(token, process.env.JWT_SECRET);
 
     if (!payload) {
