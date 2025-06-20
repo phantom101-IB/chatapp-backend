@@ -8,6 +8,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: ["https://phantomchatapp.netlify.app"],
+    credentials: true,
   },
 });
 
