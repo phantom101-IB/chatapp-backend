@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookies());
 app.use(
   cors({
-    // origin: "http://localhost:5173",
+    origin: "https://phantomchatapp.netlify.app/",
     credentials: true,
   })
 );
