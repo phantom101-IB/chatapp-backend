@@ -24,6 +24,10 @@ const getMessages = async (req, res) => {
     ],
   });
 
+  if (!message || message.length === 0) {
+    res.status(404).json({ msg: "No Messages available" });
+  }
+
   res.status(200).json(message);
 };
 
