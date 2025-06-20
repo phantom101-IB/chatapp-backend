@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookies());
 app.use(
   cors({
-    origin: "https://phantomchatapp.netlify.app/",
+    origin: "https://phantomchatapp.netlify.app",
     credentials: true,
   })
 );
