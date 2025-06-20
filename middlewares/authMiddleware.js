@@ -7,6 +7,7 @@ const authMiddleware = async (req, res, next) => {
     if (!token) {
       return res.status(401).json({ msg: "Login fisrt" });
     }
+    console.log("Phantom");
     const payload = jwt.verify(token, process.env.JWT_SECRET);
 
     if (!payload) {
