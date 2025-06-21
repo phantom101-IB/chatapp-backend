@@ -43,7 +43,7 @@ UserSchema.methods.createJWT = function (res) {
   res.cookie("token", token, {
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    sameSite: "strict",
+    sameSite: process.env.NODE_DEV === "production" ? "None" : "strict",
     secure: process.env.NODE_DEV !== "development",
   });
   return token;
